@@ -1,5 +1,7 @@
 #include "my_print_combn.h"
 
+int my_putchar(char c);
+
 int main(void)
 {
 	my_print_combn(3);

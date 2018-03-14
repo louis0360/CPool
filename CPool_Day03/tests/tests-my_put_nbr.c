@@ -1,5 +1,7 @@
 #include "my_put_nbr.h"
 
+int my_putchar(char c);
+
 int main()
 {
 	my_put_nbr(42);
