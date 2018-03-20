@@ -1,3 +1,5 @@
+#include <limits.h>
+
 int my_strlen(char const *str);
 
 int	find_pos(char c, char const *str)
@@ -35,7 +37,7 @@ int my_getnbr_base(char const *str, char const *base)
 		return 0;
 	for(i = 0; str[i]; i++)
 	{
-		if(find_pos(str[i], base)==-1)
+		if(find_pos(str[i], base)==-1 && str[i] !='+' && str[i] != '-')
 			return 0;
 	}
 	
@@ -48,5 +50,7 @@ int my_getnbr_base(char const *str, char const *base)
 		nb = nb + find_pos(str[i], base) * fac;
 		fac *= my_strlen(base);
 	}
+	if ((unsigned)nb > INT_MAX)
+		return 0;
 	return (nb);
 }
