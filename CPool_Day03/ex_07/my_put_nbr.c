@@ -6,6 +6,11 @@ int my_put_nbr(int nb)
 {
 	if(nb<0)
 	{
+		if(nb == -2147483648)
+		{
+			write(1,"-2147483648",11);
+			return 0;
+		}
 		my_putchar('-');
 		my_put_nbr(nb*(-1));
 	}
