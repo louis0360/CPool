@@ -1,14 +1,18 @@
+#include <stdlib.h>
+
 int my_strlen(char const *str);
 
 char *my_evil_str(char *str)
 {
-	char tmp;
-	int i,len = my_strlen(str);
-	for (i=0;i<len/2;i++)
+	int len=my_strlen(str);
+	char *tmp=malloc(len);
+	char *p = tmp;
+	while(len>0)
 	{
-		tmp = str[i];
-		str[i]=str[len-i-1];
-		str[len-i-1]=tmp;
+		*p=str[len-1];
+		len--;
+		p++;
 	}
-	return str;
+	*p='\0';
+	return tmp;
 }
