@@ -1,3 +1,5 @@
+#include <stdlib.h>
+
 char *my_strstr(char *str, char const *to_find)
 {
 	int i = 0;
@@ -13,5 +15,5 @@ char *my_strstr(char *str, char const *to_find)
 		return (str);
 	}
 	else
-		return "\0";
+		return NULL;
 }
